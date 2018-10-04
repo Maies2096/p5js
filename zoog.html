@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+      //backround
+
+function setup() {
+background(0);
+ createCanvas(800,800);
+}
+  
+function draw() {
+  fill("white")
+  background(255);
+  //pass video frame as texture
+  
+  
+//actual work
+  
+  //text allignment and settings
+  strokeWeight(3)
+  textFont("Trebuchet MS")
+  textSize(22)
+  textAlign(LEFT)
+  
+  //actual text
+  text("Mary had a little lamb...",10,500)
+  text("Who's fleece was white as snow",10,550)
+  text("It went out to a club one night...",10,600)
+  text("Drop it hella lowwwww!",10,650)
+  text("(that lambz gangsta),I knowz him",10,700)
+  
+  //head 
+  ellipse(375,200,400,400)//head
+  ellipse(25,200,80,80)//hand
+  ellipse(675,150,80,80)//hand
+  fill("white")
+  ellipse(220,300,80,80)//eye
+  ellipse(450,300,80,80)//eye
+  fill("black")
+  fill("black")
+  stroke(255,128,0)
+  ellipse(300,350,40,40)//mouth
+  
+  //arms
+  fill("black")
+  ellipse(75,200,40,40)//armleft
+  ellipse(650,200,40,40)//armright
+  
+  //aditional body parts
+  fill("black")
+  stroke(255,25,25)
+  arc(185, 70, 85, 90, 75, PI + QUARTER_PI, CHORD)//ears
+  arc(550, 70, 85, 90, 75, PI + QUARTER_PI, CHORD)//ears
+  point(475,350)//dimples
+  point(480,355)//dimples
+  point(485,350)//dimples
+  line(400,205,505,205) //righteyebrow
+  line(200,205,175,205)//lefteyebrow
+  triangle(340,840,554,890,460,400)//body
+  //
+  
+ 
+
+}
+
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/Maies2096/p5js/blob/master/zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
