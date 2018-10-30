@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+      function setup() {
+        //variables for snow,rotating ellipse, and moving circles
+var centerX
+var centerY
+var a
+var b
+var angle
+var weight
+var a1
+var a2 
+var b1
+var b2
+var c1
+var c2
+var r = 1; //var that increments
+var snowX = [];//array
+var snowY = [];//array
+var amountOfSnow = 750;
+var snowSize = .01;
+
+
+function setup() {
+      //background(255,255,255)
+  createCanvas(700, 700,WEBGL)//WEBGL is used for 3d animations
+      centerX=200
+      a=200
+      centerY=200
+      b=200
+      angle=0
+      weight= random(20,70)
+      a1=200
+      a2=200
+      b1=40
+      b2=40
+      c1=PI/4
+      c2=PI/8    
+      
+      for(var i = 0; i < amountOfSnow; i++){
+    //snow coordinates
+    /*.push is an array that allows us to add a new value to the existing value in a set
+    forming another valuefor the x and y coordinateThis allows the arrow to return to the beginning
+    and read the range of values oall over again including the value added by push resultingin a flling effect to be seen by the veiwer*/
+    snowX.push(random() * 700);
+    snowY.push(random() * 700);
+  }
+}
+
+ function draw(){
+      //code below used to draw and fill ellipses including the sliding ones
+      stroke(0)
+      fill(234,56,82)
+      ellipse (a-150,centerY-150,70,70)
+      fill(65,81,116)
+      ellipse(a+40,centerY-150,70,70)
+      fill(65,81,11)
+      ellipse(a+270,centerY-150,70,70)
+       fill(240,167,66)
+      ellipse(a+450,centerY-150,70,70)
+      fill(65,81,116)
+      ellipse(a-150,centerY+30,70,70)
+      fill(234,56,82)
+      ellipse(a+40,centerY+30,70,70)
+      fill(240,167,66)
+      ellipse(a+270,centerY+30,70,70)
+      fill(65,81,11)
+      ellipse(a+450,centerY+30,70,70)
+     fill(65,81,11)
+      ellipse (a-150,centerY+200,70,70)
+      fill(65,81,116)
+      ellipse(a+40,centerY+200,70,70)
+      fill(284,56,82)
+      ellipse(a+270,centerY+200,70,70)
+      fill(240,167,66)
+      ellipse(a+450,centerY+200,70,70)
+      ellipse(a-150,centerY+370,70,70)
+      fill(65,81,11)
+      ellipse(a+40,centerY+370,70,70)
+      fill(65,81,116)
+      ellipse(a+270,centerY+370,70,70)
+      fill(284,56,82)
+      ellipse(a+450,centerY+370,70,70)
+      
+      a ++
+      
+      centerY--
+      centerX--
+       fill(234,56,82)
+      ellipse (centerX-150,centerY-150,70,70)
+      
+      fill(65,81,116)
+      ellipse(centerX+40,centerY-150,70,70)
+      
+      fill(65,81,11)
+      ellipse(centerX+270,centerY-150,70,70)
+      
+       fill(240,167,66)
+      ellipse(centerX+450,centerY-150,70,70)
+       
+      fill(65,81,116)
+      ellipse(centerX-150,centerY+30,70,70)
+       
+      fill(234,56,82)
+      ellipse(centerX+40,centerY+30,70,70)
+      
+      fill(240,167,66)
+      ellipse(centerX+270,centerY+30,70,70)
+      
+      fill(65,81,11)
+      ellipse(centerX+450,centerY+30,70,70)
+       
+      fill(65,81,11)
+      ellipse (centerX-150,centerY+200,70,70)
+      
+      fill(65,81,116)
+      ellipse(centerX+40,centerY+200,70,70)
+      
+      fill(284,56,82)
+      ellipse(centerX+270,centerY+200,70,70)
+      fill(240,167,66)
+      ellipse(centerX+450,centerY+200,70,70)
+      
+      
+      ellipse(centerX-150.1,centerY+370.1,70,70)
+      fill(65,81,11)
+      ellipse(centerX+40,centerY+370,70,70)
+      
+      fill(65,81,116) 
+      ellipse(centerX+270,centerY+370,70,70)
+       
+      fill(284,56,82)
+      ellipse(centerX+450,centerY+370,70,70)
+       
+      
+
+      
+      centerX--
+       
+  //used to create the pointer used to draw with     
+  noStroke()
+  fill(random(250),random(200),200,50)
+  ellipse(mouseX,mouseY,25,25)
+ }
+// as mouse is pressed snow will fall
+ function mousePressed(){
+  background(250,250,250)
+      
+       stroke(0); //snow color
+  strokeWeight(3); //snow size
+  for(var i = 0; i < amountOfSnow; i++){
+   point(snowX[i],snowY[i]);
+    if(snowY[i] >700){
+      snowY[i] = 0;
+    }
+    else{
+      snowY[i]++;
+    }
+  }
+  //snow end
+ }
+
+function keyPressed(){
+       background(255)
+        stroke(2)
+        strokeWeight(2)
+        rotateZ(angle)//makes the ellipse roate across z axis
+        fill(284,56,82)
+        ellipse(350,350,400,400)
+        fill(240,167,66)
+        ellipse(350,350,375,375)
+        fill(65,81,116)
+        ellipse(350,350,325,325)
+        fill(65,81,11)
+        ellipse(350,350,300,300)
+        fill(284,56,82)
+        ellipse(350,350,275,275)
+        fill(240,167,66)
+        ellipse(350,350,250,250)
+        fill(65,81,116)
+        ellipse(350,350,225,225)
+        fill(65,81,11)
+        ellipse(350,350,200,200)
+        fill(284,56,82)
+        ellipse(350,350,175,175)
+        fill(240,167,66)
+        ellipse(350,350,150,150)
+        fill(65,81,116)
+        ellipse(350,350,125,125)
+        fill(65,81,11)
+        ellipse(350,350,100,100)
+               
+        
+        angle += .025
+        
+  }
+          
+   
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/Maies2096/p5js/blob/master/04-Interaction-Project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
